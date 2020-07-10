@@ -1,5 +1,6 @@
 # CommonTools
 1、崩溃捕获以减少不必要的程序崩溃
+----
   使用：在程序的Application中进行设置，代码如下
 
     public class BaseApplication extends Application {
@@ -35,7 +36,7 @@
     }
     
 2、日期格式化工具
-
+----
   DateUtils.FormatTimestamp(String time, String format);    //将时间戳格式化为自己指定的时间格式
 
   目前给出的格式有如下几种：
@@ -48,15 +49,15 @@
   DateUtils.TimestampFormat(String format, String time);    //将格式化的时间转为时间戳
   
 3、身份证号码本地验证工具
-
+----
   IDCardValidate.validate_effective(String idcardNumber);     //填入身份证号码验证身份证号码格式是否正确，正确则返回身份证号
   
 4、IP地址获取工具
-
+----
   IPAddressUtil.getIpAddress(Context context);     //返回设备当前的网络IP
   
 5、缓存数据工具
-
+----
   ACache aCache = ACache.get(mContext);
   
   String string = aCache.getAsString(key);     //获取缓存数据
