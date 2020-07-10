@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final String s = IDCardValidate.validate_effective("370181199407256138");
+        final String s = IDCardValidate.validate_effective("3701000000000000");
         Log.e("身份证号码验证", "onCreate: " + s);
 
         tv_ip.setOnClickListener(new View.OnClickListener() {
