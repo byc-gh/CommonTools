@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int a = 10 / 0;
-                Toast.makeText(MainActivity.this, "" + a, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         tv_get_screen_width_height.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_get_screen_width_height.setText("宽："+ ScreenUtils.getScreenWidth(MainActivity.this)+"     高："+ScreenUtils.getScreenHeight(MainActivity.this)+"     状态栏高："+ScreenUtils.getStatusHeight(MainActivity.this));
+                tv_get_screen_width_height.setText("宽："+ ScreenUtils.getScreenWidth(MainActivity.this)+"     高："+ScreenUtils.getScreenHeight(MainActivity.this)+"     状态栏高："+ScreenUtils.getStatusHeight(MainActivity.this)+"     dpi："+(int)(ScreenUtils.getScreenDensity(MainActivity.this)*160));
             }
         });
         tv_shoot_screen_status.setOnClickListener(new View.OnClickListener() {
