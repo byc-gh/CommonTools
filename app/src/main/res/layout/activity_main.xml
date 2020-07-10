@@ -1,18 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="格式化时间戳"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取IP"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_crash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="崩溃"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/tv_add_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="添加cache缓存"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_get_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="读取cache缓存"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_clear_cache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="清除cache缓存"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_add_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SharedPreferences添加"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/tv_get_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SharedPreferences读取"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_clear_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SharedPreferences清除"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_get_screen_width_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取屏幕宽高及状态栏高度"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_shoot_screen_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="截取屏幕（包含状态栏）"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/tv_shoot_screen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="截取屏幕（不包含状态栏）"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+            <ImageView
+                android:id="@+id/iv_screen_shoot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="打印LOG"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/tv_get_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取包名及版本号"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/colorAccent"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
