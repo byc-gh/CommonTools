@@ -1,6 +1,6 @@
 # CommonTools
 
-  implementation 'com.github.byc-gh:CommonTools:v1.2'
+  implementation 'com.github.byc-gh:CommonTools:v1.4'
 
 ----
 1、崩溃捕获以减少不必要的程序崩溃
