@@ -71,3 +71,12 @@
   String string = aCache.getAsString(key);     //获取缓存数据
   
   aCache.put(key,json,7 * ACache.TIME_DAY);     //添加缓存数据，最后参数为缓存时效，示例为时效7天，具体可自行设置，也可不设置，永久缓存
+
+----
+6、SharedPreferences数据操作工具
+----
+  PrefUtil.putString(context,key,value);     //存储数据
+  
+  PrefUtil.getString(context, key, defaltValue);     //获取数据
+  
+  其他数据类型存储同上
