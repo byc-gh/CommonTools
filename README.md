@@ -1,6 +1,6 @@
 # CommonTools
 
-  implementation 'com.github.byc-gh:CommonTools:v1.2'
+  implementation 'com.github.byc-gh:CommonTools:v1.4'
 
 ----
 1、崩溃捕获以减少不必要的程序崩溃
@@ -80,3 +80,45 @@
   PrefUtil.getString(context, key, defaltValue);     //获取数据
   
   其他数据类型存储同上
+
+----
+7、屏幕信息工具
+----
+ ScreenUtils.getScreenWidth(context);     //获取屏幕宽度
+ 
+ ScreenUtils.getScreenHeight(context);     //获取屏幕高度
+ 
+ ScreenUtils.getStatusHeight(context);     //获取屏幕状态栏高度
+ 
+ ScreenUtils.getScreenDensity(context);     //获取屏幕像素密度
+ 
+ ScreenUtils.snapShotWithStatusBar(context);     //获取当前屏幕截图，包含状态栏
+ 
+ ScreenUtils.snapShotWithoutStatusBar(context);     //获取当前屏幕截图，不包含状态栏
+ 
+----
+8、Log日志工具
+----
+ 在APP的Application中设置L.isDebug = true; 此时程序中自行打印的Log日志可见，反之则不可见
+ 
+----
+9、软键盘工具
+----
+  KeyBoardUtils.openKeyBord(editText,context);     //打开软键盘
+  
+  KeyBoardUtils.closeKeyBord(context,editText);     //关闭软键盘
+  
+  KeyBoardUtils.isSHowKeyboard(context,view);     //判断软键盘是否弹出
+  
+----
+10、APP操作工具
+----
+  AppUtils.getAppName(context);     //获取应用程序名称
+  
+  AppUtils.getVersionName(context);     //当前应用的版本名称
+  
+  AppUtils.getVersionCode(context);     //当前应用的版本号
+  
+  AppUtils.getPackageName(context);     //当前应用包名
+  
+  AppUtils.getBitmap(context);     //获取图标
