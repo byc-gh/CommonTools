@@ -63,6 +63,15 @@ public class ScreenUtils {
     }
 
     /**
+     * 获取屏幕像素密度
+     * @param context
+     * @return
+     */
+    public static float getScreenDensity(Context context) {
+        return context.getResources().getDisplayMetrics().density;
+    }
+
+    /**
      * 获取当前屏幕截图，包含状态栏
      *
      * @param activity
