@@ -124,7 +124,7 @@
   AppUtils.getBitmap(context);     //获取图标
 
 ----
-11、网络状态监听工具
+11、网络状态监听工具     取自[CocoYuki](https://github.com/CocoYuki/NetListener)
 ----
   在Application的onCreate方法中添加
 
