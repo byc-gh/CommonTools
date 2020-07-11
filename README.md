@@ -140,40 +140,40 @@
         
   在Activity中添加
   
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        NetworkManager.getDefault().registerObserver(this);
-    }
-  
-    //网络监听
-    @NetworkListener()
-    public void netork(@NetType String type){
-        switch (type){
-            case NetType.AUTO:
-                L.e("network","AUTO");
-                break;
-            case NetType.CMNET:
-                L.e("network","CMNET");
-                break;
-            case NetType.CMWAP:
-                L.e("network","CMWAP");
-                break;
-            case NetType.WIFI:
-                L.e("network","WIFI");
-                break;
-            case NetType.NONE:
-                L.e("network","NONE");
-                break;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            NetworkManager.getDefault().registerObserver(this);
         }
-    }
+  
+        //网络监听
+        @NetworkListener()
+        public void netork(@NetType String type){
+            switch (type){
+                case NetType.AUTO:
+                    L.e("network","AUTO");
+                    break;
+                case NetType.CMNET:
+                    L.e("network","CMNET");
+                    break;
+                case NetType.CMWAP:
+                    L.e("network","CMWAP");
+                    break;
+                case NetType.WIFI:
+                    L.e("network","WIFI");
+                    break;
+                case NetType.NONE:
+                    L.e("network","NONE");
+                    break;
+            }
+        }
     
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        //注销目标广播
-        NetworkManager.getDefault().unRegisterObserver(this);
-        //注销所有广播
-        NetworkManager.getDefault().unRegisterAllObserver();
-    }
+        @Override
+        protected void onDestroy() {
+            super.onDestroy();
+            //注销目标广播
+            NetworkManager.getDefault().unRegisterObserver(this);
+            //注销所有广播
+            NetworkManager.getDefault().unRegisterAllObserver();
+        }
