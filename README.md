@@ -126,7 +126,9 @@
 ----
 11、网络状态监听工具
 ----
-  在Application的onCreate方法中添加NetworkManager.getDefault().init(this);
+  在Application的onCreate方法中添加
+
+         NetworkManager.getDefault().init(this);
   
   在AndroidManifest.xml文件中添加如下代码：
   
@@ -136,7 +138,14 @@
             </intent-filter>
         </receiver>
         
-  在Activity中添加NetworkManager.getDefault().registerObserver(this);
+  在Activity中添加
+  
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        NetworkManager.getDefault().registerObserver(this);
+    }
   
     //网络监听
     @NetworkListener()
