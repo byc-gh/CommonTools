@@ -168,3 +168,12 @@
                 break;
         }
     }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //注销目标广播
+        NetworkManager.getDefault().unRegisterObserver(this);
+        //注销所有广播
+        NetworkManager.getDefault().unRegisterAllObserver();
+    }
