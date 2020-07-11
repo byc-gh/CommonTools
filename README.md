@@ -122,3 +122,40 @@
   AppUtils.getPackageName(context);     //当前应用包名
   
   AppUtils.getBitmap(context);     //获取图标
+
+----
+11、网络状态监听工具
+----
+  在Application的onCreate方法中添加NetworkManager.getDefault().init(this);
+  
+  在AndroidManifest.xml文件中添加如下代码：
+  
+        <receiver android:name="com.byc.mylibrary.networklistener.NetStateReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        
+  在Activity中添加NetworkManager.getDefault().registerObserver(this);
+  
+    //网络监听
+    @NetworkListener()
+    public void netork(@NetType String type){
+        switch (type){
+            case NetType.AUTO:
+                L.e("network","AUTO");
+                break;
+            case NetType.CMNET:
+                L.e("network","CMNET");
+                break;
+            case NetType.CMWAP:
+                L.e("network","CMWAP");
+                break;
+            case NetType.WIFI:
+                L.e("network","WIFI");
+                break;
+            case NetType.NONE:
+                L.e("network","NONE");
+                break;
+        }
+    }
