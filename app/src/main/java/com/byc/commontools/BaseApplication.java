@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.byc.mylibrary.AppUtils;
 import com.byc.mylibrary.L;
+import com.byc.mylibrary.networklistener.NetworkManager;
 
 import cockroach.Cockroach;
 import cockroach.ExceptionHandler;
@@ -18,6 +19,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         L.isDebug = true;
         AppUtils.context = this;
+        NetworkManager.getDefault().init(this);
         install();
     }
 

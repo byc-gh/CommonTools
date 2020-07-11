@@ -18,15 +18,22 @@ import com.byc.mylibrary.IPAddressUtil;
 import com.byc.mylibrary.L;
 import com.byc.mylibrary.PrefUtil;
 import com.byc.mylibrary.ScreenUtils;
+import com.byc.mylibrary.networklistener.NetType;
+import com.byc.mylibrary.networklistener.NetworkListener;
+import com.byc.mylibrary.networklistener.NetworkManager;
 
 public class MainActivity extends AppCompatActivity {
 
     private String time = "1594287701";
+    private TextView tv_network_status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        NetworkManager.getDefault().registerObserver(this);
+
+        tv_network_status = findViewById(R.id.tv_network_status);
         final TextView tv_time = findViewById(R.id.tv_time);
         final TextView tv_ip = findViewById(R.id.tv_ip);
         final TextView tv_crash = findViewById(R.id.tv_crash);
@@ -148,5 +155,37 @@ public class MainActivity extends AppCompatActivity {
                 tv_get_version.setText("包名："+ AppUtils.getPackageName(MainActivity.this)+"   版本号："+AppUtils.getVersionCode());
             }
         });
+    }
+
+    //网络监听
+    @NetworkListener()
+    public void netork(@NetType String type){
+        switch (type){
+            case NetType.AUTO:
+                if (tv_network_status!=null) {
+                    tv_network_status.setText("AUTO");
+                }
+                break;
+            case NetType.CMNET:
+                if (tv_network_status!=null) {
+                    tv_network_status.setText("CMNET");
+                }
+                break;
+            case NetType.CMWAP:
+                if (tv_network_status!=null) {
+                    tv_network_status.setText("CMWAP");
+                }
+                break;
+            case NetType.WIFI:
+                if (tv_network_status!=null) {
+                    tv_network_status.setText("WIFI");
+                }
+                break;
+            case NetType.NONE:
+                if (tv_network_status!=null) {
+                    tv_network_status.setText("NONE");
+                }
+                break;
+        }
     }
 }
