@@ -177,3 +177,9 @@
             //注销所有广播
             NetworkManager.getDefault().unRegisterAllObserver();
         }
+
+----
+12、新增两个自定义控件ShapeTextView和RoundImageView     取自[ASheng-Bisheng](https://github.com/ASheng-Bisheng/Android-or-Java-UtilityClass)
+----
+  ShapeTextView为圆角TextView
+  RoundImageView为可圆角、可圆形、可不处理的ImageView   属性为：round（圆角） circle（圆形）
