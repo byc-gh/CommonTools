@@ -183,4 +183,26 @@
 ----
   ShapeTextView为圆角TextView
 
+        <com.byc.mylibrary.ShapeTextView
+            android:id="@+id/tv_shape"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:text="aaaaaaaaaaaa"
+            app:solidColor="#1fadff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:textRadius="10dp" />
+
   RoundImageView为可圆角、可圆形、可不处理的ImageView   属性为：round（圆角） circle（圆形）
+
+        <com.byc.mylibrary.RoundImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            app:type="circle"
+            app:radius="10dp"
+            android:src="@mipmap/a"
+            android:scaleType="centerCrop"/>
